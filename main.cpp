@@ -32,7 +32,7 @@ void solve() {
         }
     }
     for (int i = 0; i < t; i++) {
-        cout << "Case #" << i + 1 << ": " << out[i];
+        cout << "Case #" << i + 1 << ": " << out[i] << "\n";
     }
     return;
 }
