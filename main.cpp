@@ -11,20 +11,20 @@ void solve() {
     int t;
     cin >> t;
     string out[t];
-    ull odd = 0, even = 0;
     for (int i = 0; i < t; i++) {
-        int c, cnt = 1;
-        do {
-            c = getchar();
-            if (c != ' ') {
-                if (cnt == 1) odd += c - '0';
-                if (cnt == 2) even += c - '0';
-                if (cnt == 2)
-                    cnt = 1;
-                else
-                    cnt++;
+        ull odd = 0, even = 0;
+        string s;
+        int chk = 1;
+        cin >> s;
+        for (int j = 0; j < s.size(); j++) {
+            if (chk == 1) {
+                odd += s[j] - '0';
+                chk = 2;
+            } else {
+                even += s[j] - '0';
+                chk = 1;
             }
-        } while (c != ' ');
+        }
         if ((odd - even) % 11 == 0) {
             out[i] = "Divisible";
         } else {
